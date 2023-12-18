@@ -1,0 +1,287 @@
+
+:root {
+    color-scheme: dark light;
+    --primary-font-size: 29px;
+    --view-sub-font-size: 1.2em;
+    --view-input-primary-font-size: 1.7em;
+    --primary-line-height: 72px;
+    --btn-primary-width: 72px;
+    --btn-primary-height: 72px;
+    --btn-margin: 3px;
+    --btn-primary-color: #333333;
+    --btn-sub-color: #232323;
+    --btn-second-primary-color: #FF9F0A;
+    --btn-third-primary-color: #A5A5A5;
+    --background-color: #000000;
+    --text-color: white;
+    --text-sub-view-color: rgb(148, 144, 144);
+    --area-margin: 7px;
+    --area-gap: 10px;
+    --main-height: 80vh;
+    --history-listing-height: 45vh;
+    --border-radius: 4px;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 100%;
+    /* border: 1px solid white; */
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+ul {
+    list-style-type: none;
+}
+.fa {
+    font-family: 'FontAwesome'! Important; 
+}
+/* ht - end reset css */
+body {
+    height: 100vh;
+    background-image: linear-gradient(to left, #8F9779, #ccc72e);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main{
+    font-size: var(--primary-font-size);
+    line-height: var(--primary-line-height);
+    background-color: var(--background-color);
+    color: var(--text-color);
+    border-radius: var(--border-radius);
+}
+/* ht - end enviroment */
+#history{
+    display: none;
+}
+
+/* ht - end history session */
+#view_area{
+    display: flex;
+    flex-direction: column;
+}
+.view_area-item{
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+#input-screen{
+    all: unset;
+    font-size: var(--view-input-primary-font-size);
+}
+#result-screen{
+    text-align: end;
+    font-size: var(--view-sub-font-size);
+    line-height: var(--view-sub-font-size);
+}
+
+/* ht - end calculator view area */
+#btn-input_area{
+    display: grid;
+    grid-template-areas: 
+    "C C C B"
+    "A A A B"
+    "A A A B"
+    "A A A B"
+    "A A A D";
+}
+#numpad{
+    grid-area: A;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+#operator_area{
+    grid-area: B;
+    display: flex;
+    flex-direction: column;
+}
+#calc-action_area{
+    grid-area: C;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+#calc-result-action_area{
+    grid-area: D;
+}
+li.btn {
+    text-align: center;
+    width: var(--btn-primary-width);
+    max-height: var(--btn-primary-height);
+    background-color: var(--btn-primary-color);
+    margin: var(--btn-margin);
+    border-radius:50%;
+    transition: 0.2s;
+}
+#operator_area li.btn, 
+#equal{
+    background-color: var(--btn-second-primary-color);
+}
+#calc-action_area li.btn{
+    background-color: var(--btn-third-primary-color);
+}
+li.btn:hover{
+    cursor: pointer;
+}
+li.btn:active {
+    border-radius: 25%;
+    background-color: var(--btn-sub-color)!important;
+}
+/* ht - end btn area  */
+
+
+
+@media only screen and (min-width: 480px){
+    main{
+        max-height: var(--main-height);
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: var(--area-gap);
+        border-radius: 10px 44px 44px 10px;
+    }
+    main > * {
+        margin: var(--area-margin);
+        padding: var(--area-gap);
+        background-color: #000000;
+    }
+    /* ht - end main update  */
+
+    #history{
+        display: block;
+        align-self: baseline;
+        border-radius: 10px;
+    }
+    #history h2 {
+        text-transform: uppercase;
+    }
+    ul#history_listing{
+        font-size: 1.1rem;
+        line-height: 1.1rem;
+        max-height: var(--history-listing-height);
+        overflow: auto;
+    }
+    #history_listing::-webkit-scrollbar {
+        width: 8px; /* Định dạng chiều rộng của thanh trượt */
+    }
+    #history_listing::-webkit-scrollbar-thumb {
+      background-color: #888; /* Màu nền của thanh trượt */
+      border-radius: var(--border-radius); /* Định dạng bo tròn cho thanh trượt */
+    }
+    
+    #history_listing::-webkit-scrollbar-thumb:hover {
+      background-color: #555; /* Màu nền của thanh trượt khi rê chuột vào */
+    }
+    .history_time-marker{
+        font-weight: bold;
+        border-bottom: 1px solid #888 ;
+    }
+    .history_daily-listing{
+        padding: var(--area-gap);
+    }
+    .history_calculator-items > * {
+        display: block;
+    }
+    .history_result-item {
+        text-align: end;
+    }
+
+    #delete-all-btn {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        color: #fff;
+    }
+    .delete-all-btn i {
+        color: #fff;
+    }
+
+    /* end history session  */
+    #calculator{
+        border-radius: 44px;
+    }
+    #btn-input_area{
+        display: grid;
+        grid-template-areas:
+        "A B C"
+        "A B C"
+        "A B C"
+        "A B D";
+        grid-template-columns: 3fr 1fr 1fr;
+
+    }
+    #calc-action_area{
+        grid-area: C;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/* footer css */
+@media only screen and (max-width: 768px){
+    .footer>*:not(.copy) {
+        display: none;
+    }
+    .copy{
+        text-align: center;
+    }
+}
+.footer {
+    padding: 0;
+    position: fixed;
+    bottom: 50px;
+    left: 50px;
+    right: 50px;
+    width: auto;
+    height: 1px;
+    z-index: 99;
+    display: block;
+}
+.footer .soc-box {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    float: right;
+    width: 24px;
+}
+.follow-label {
+    padding-right: 75px;
+    position: absolute;
+    bottom: 100%;
+    right: 0;
+    color: var(--textColor);
+    font-size: 14px;
+    line-height: 24px;
+    height: 24px;
+    white-space: nowrap;
+    transform-origin: 100% 0;
+    text-align: right;
+    transform: rotate(90deg);
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+}
+.copy a{
+    all: unset;
+    cursor: pointer;
+    color: var(--textColor);
+}
+.follow-label:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 50px;
+    height: 1px;
+    background: rgba(0,0,0,.1);
+}
+.clear {
+    clear: both;
+}
+.footer .soc a {
+    display: block;
+    margin-bottom: 20px;
+    text-align: center;
+    color: var(--textColor);
+}
+
+/*end footer css*/

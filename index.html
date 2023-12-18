@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#50c878">
+    <link rel="stylesheet" 
+     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" 
+     integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" 
+     crossorigin="anonymous" 
+     referrerpolicy="no-referrer" 
+    />
+    <link rel="stylesheet" href="style.css">
+    <meta name="color-scheme" content="light dark" />
+    <title>Calculator</title>
+</head>
+<body>
+    <main>
+        <section id = 'history'>
+            <h2>
+                history 
+                    <button id="delete-all-btn"  title="Delete All">
+                        <i class="fas fa-trash-alt"></i> 
+                    </button>
+                
+            </h2>
+            <ul id="history_listing">
+                <li class="history_time-marker">
+                    SunDay
+                    <ul class="history_daily-listing">
+                        <li class="history_calculator-items">
+                            <span class="history_operation-item"></span>
+                            <span class="history_result-item"></span>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+        <section id = 'calculator'>
+            <div id = 'view_area'>
+                <input 
+                  type="text" 
+                  size = '1'  
+                  pattern="^[0-9+\-\*/()%]*$"
+                  id = 'input-screen' 
+                  class='view_area-item'
+                  autofocus
+                  readonly
+                />
+                <div id = 'result-screen' class="view_area-item">0</div>
+            </div>
+            <div id = 'btn-input_area'>
+                <ul id = 'numpad'>
+                    <li class='btn' data-action="1" id="1">1</li>
+                    <li class='btn' data-action="2" id="2">2</li>
+                    <li class='btn' data-action="3" id="3">3</li>
+                    <li class='btn' data-action="4" id="4">4</li>
+                    <li class='btn' data-action="5" id="5">5</li>
+                    <li class='btn' data-action="6" id="6">6</li>
+                    <li class='btn' data-action="7" id="7">7</li>
+                    <li class='btn' data-action="8" id="8">8</li>
+                    <li class='btn' data-action="9" id="9">9</li>
+                    <li class='btn' data-action="." id="point">&#x2E</li>
+                    <li class='btn' data-action="0" id="0">0</li>
+                    <li class='btn' data-action="Backspace" id="backspace">&#x232B</li>
+                </ul>
+                <ul id = 'operator_area'>
+                    <li class='btn' data-action='+' id='add'>&#43</li>
+                    <li class='btn' data-action='-' id='subtrac'>&#8722</li>
+                    <li class='btn' data-action='*' id='multiply'>&#x00D7</li>
+                    <li class='btn' data-action='/' id='divide'>&#247</li>
+                </ul>
+                <ul id = 'calc-action_area'>
+                    <li class='btn' data-action='allClear' id="all-clear">AC</li>
+                    <li class='btn' data-action='parenthesis' id="parenthesis">&#40&#41</li>
+                    <li class='btn' data-action='%' id="percent">&#37</li>
+                </ul>
+                <ul id="calc-result-action_area">
+                    <li class='btn' data-action='equal' id='equal'>&#61</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+   <footer class="footer">
+        <div class="copy">
+            <a href='mailto:ht.hophuoctrung@gmail.com?subject="Github contact"''>E: ht.hophuoctrung@gmail.com</a><br>
+            <a href="tel:+84935896372">T: (+84) 0935 896 372</a>
+        </div>
+        <div class="soc-box">
+        <div class="follow-label">Follow Me</div>
+        <div class="soc"> 
+            <a target="_blank" href="https://www.linkedin.com/in/hophuoctrung"> <span class="ion fab fa-linkedin-in"></span> </a> 
+            <a target="_blank" href="https://github.com/hophuoctrung"> <span class="ion fab fa-github"></span> </a> 
+            <a target="_blank" href="https://bignote.bigbrothers.top/members/hotuhai/"> <span class="ion fab fa-facebook-f"></span> </a> 
+            <a target="_blank" href="https://hophuoctrung.bigbrothers.top/"> <span class="ion fab fa-instagram"></span> </a>
+        </div>
+        </div><div class="clear"></div>
+    </footer>
+</body>
+    <script src="index.js"></script>
+</html>
