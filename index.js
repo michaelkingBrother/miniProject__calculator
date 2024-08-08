@@ -163,7 +163,7 @@ function checkKeyInput(event) {
     case "parenthesis":
       const hasOpeningBracket = inputValue.includes("(");
       const endsWithOperator = /[+\-*/]$/.test(inputValue);
-      
+
       if(endsWithOperator) {
         inputValue += '(';
       } else if (!hasOpeningBracket){
@@ -189,16 +189,16 @@ function checkKeyInput(event) {
           operator: inputValue,
           result: result
         };
-  
+
         if (historyData.hasOwnProperty(currentDay)) {
           historyData[currentDay].push(entry);
         } else {
           historyData[currentDay] = [entry];
         }
-  
+
         inputValue = result;
         inputScreenView.value = result;
-  
+
         saveHistoryToLocalStorage(historyData);
         historyLog();
       }

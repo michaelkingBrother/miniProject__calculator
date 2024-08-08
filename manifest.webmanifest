@@ -1,0 +1,21 @@
+{
+    "name": "Calculator PWA",
+    "short_name": "Calc",
+    "description": "Calculator as a Progressive Web App",
+
+    "scope": "/miniProject__calculator/",
+    "start_url": "/miniProject__calculator/",
+
+    "background_color": "#ffffff",
+    "theme_color": "#ffffff",
+
+    "display": "standalone",
+
+    "icons": [
+        {
+          "src": "/miniProject__calculator/assets/calc-logo.png",
+          "type": "image/png",
+          "sizes": "700x700"
+        }
+    ]
+  }

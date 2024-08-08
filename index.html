@@ -5,25 +5,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#50c878">
-    <link rel="stylesheet" 
-     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" 
-     integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" 
-     crossorigin="anonymous" 
-     referrerpolicy="no-referrer" 
+    <link rel="stylesheet"
+     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+     integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+     crossorigin="anonymous"
+     referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="style.css">
     <meta name="color-scheme" content="light dark" />
     <title>Calculator</title>
+    <meta name="description" content="calculator progressive web app made with html,css,js">
+    <meta name="author" content="trungHo">
+    <link rel="icon" type="image/x-icon" href="assets/calc-logo.png">
+
+    <meta property="og:title" content="Calculator">
+    <meta property="og:description" content="calculator progressive web app made with html,css,js">
+    <meta property="og:image" content="/assets/calc-web-ui.png">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Calculator">
+    <meta name="twitter:description" content="calculator progressive web app made with html,css,js">
+    <meta name="twitter:image" content="/assets/calc-web-ui.png">
+
+    <meta property="og:url" content="https://michaelkingbrother.github.io/miniProject__calculator/">
+    <meta property="og:type" content="website">
+    <!-- add pwa -->
+    <link rel="canonical" href="https://michaelkingbrother.github.io/miniProject__calculator/" />
+    <link rel="manifest" href="/miniProject__calculator/manifest.webmanifest">
 </head>
 <body>
     <main>
         <section id = 'history'>
             <h2>
-                history 
-                    <button id="delete-all-btn"  title="Delete All">
-                        <i class="fas fa-trash-alt"></i> 
-                    </button>
-                
+                history
+                <button id="delete-all-btn"  title="Delete All">
+                    <i class="fas fa-trash-alt"></i>
+                </button>
             </h2>
             <ul id="history_listing">
                 <li class="history_time-marker">
@@ -39,11 +56,11 @@
         </section>
         <section id = 'calculator'>
             <div id = 'view_area'>
-                <input 
-                  type="text" 
-                  size = '1'  
+                <input
+                  type="text"
+                  size = '1'
                   pattern="^[0-9+\-\*/()%]*$"
-                  id = 'input-screen' 
+                  id = 'input-screen'
                   class='view_area-item'
                   autofocus
                   readonly
@@ -88,24 +105,33 @@
             <a href="tel:+84935896372">T: (+84) 0935 896 372</a>
         </div>
         <div class="soc-box">
-        <div class="follow-label">Follow Me</div>
-        <div class="soc"> 
-            <a target="_blank" href="https://www.linkedin.com/in/hophuoctrung"> <span class="ion fab fa-linkedin-in"></span> </a> 
-            <a target="_blank" href="https://github.com/hophuoctrung"> <span class="ion fab fa-github"></span> </a> 
-            <a target="_blank" href="https://bignote.bigbrothers.top/members/hotuhai/"> <span class="ion fab fa-facebook-f"></span> </a> 
-            <a target="_blank" href="https://hophuoctrung.bigbrothers.top/"> <span class="ion fab fa-instagram"></span> </a>
+            <div class="follow-label">Follow Me</div>
+            <div class="soc">
+                <a target="_blank" href="https://www.linkedin.com/in/hophuoctrung"> <span class="ion fab fa-linkedin-in"></span> </a> 
+                <a target="_blank" href="https://github.com/hophuoctrung"> <span class="ion fab fa-github"></span> </a> 
+                <a target="_blank" href="https://bignote.bigbrothers.top/members/hotuhai/"> <span class="ion fab fa-facebook-f"></span> </a> 
+                <a target="_blank" href="https://hophuoctrung.bigbrothers.top/"> <span class="ion fab fa-instagram"></span> </a>
+            </div>
         </div>
-        </div><div class="clear"></div>
+        <div class="clear"></div>
     </footer>
 </body>
     <script src="index.js"></script>
+    <!-- add service worker -->
+    <script>
+        if (navigator.serviceWorker) {
+          navigator.serviceWorker.register (
+            '/miniProject__calculator/serviceWorker.js',
+            {scope: '/miniProject__calculator/'}
+          )
+        }
+    </script>
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-DQ8NC3QWP7"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-    
       gtag('config', 'G-DQ8NC3QWP7');
     </script>
 </html>
